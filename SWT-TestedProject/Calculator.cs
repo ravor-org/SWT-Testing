@@ -28,5 +28,10 @@ namespace SWT_TestedProject
         {
             return a / b;
         }
+
+        public int RemainingDiv(int a, int b) 
+        {
+            return a % b:;
+        }
     }
 }
