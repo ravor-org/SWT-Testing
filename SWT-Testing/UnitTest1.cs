@@ -41,5 +41,23 @@ namespace SWT_Testing
         public void DivisionByZeroTest() {
             Assert.That(() => _testCalculator.Divide(4, 0), Throws.TypeOf<DivideByZeroException>());
         }
-}
+
+        [Test]
+        public void RemainingTest3By2()
+        {
+            Assert.That(() => _testCalculator.RemainingDiv(3, 2), Is.EqualTo(1));
+        }
+        
+        [Test]
+        public void RemainingTest2By2()
+        {
+            Assert.That(() => _testCalculator.RemainingDiv(2, 2), Is.EqualTo(0));
+        }
+
+        [Test]
+        public void RemainingTest2By0()
+        {
+            Assert.That(() => _testCalculator.RemainingDiv(4, 0), Throws.TypeOf<DivideByZeroException>());
+        }
+    }
 }
