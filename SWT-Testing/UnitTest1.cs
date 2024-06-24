@@ -70,6 +70,12 @@ namespace SWT_Testing
         }
 
         [Test]
+        public void MultiplyDoubleTest()
+        {
+            Assert.That(_testCalculator.MultiplyDouble(1.5, 3), Is.EqualTo(4.5));
+        } 
+
+        [Test]
         public void MockAddTest()
         {
             // Create Mocking instance of our calculator, which will - on purpose - fail on 1+1
@@ -78,6 +84,12 @@ namespace SWT_Testing
             fakedCalc.Setup(x => x.Add(1,1)).Returns(3);
             // Assert that the mock will work, instead of real function
             Assert.That(() => fakedCalc.Object.Add(1, 1), Is.EqualTo(3));
+        }
+
+        [Test]
+        public void PartialCoverageTest()
+        {
+            Assert.That(_testCalculator.PartialCodeCoverage(11), Is.True);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,6 +40,16 @@ namespace SWT_TestedProject
             return a % b;
         }
 
+        public bool? PartialCodeCoverage(int i)
+        {
+            if (i > 10)
+                return true;
+            else if (i is < 9 and > 0)
+                return false;
+            
+            return null;
+        }
+        
         public string AddEurToCalculation(Func<int, int, int> func, int a, int b) => $"{func(a,b)}€";
     }
 }
