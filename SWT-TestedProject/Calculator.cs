@@ -38,5 +38,7 @@ namespace SWT_TestedProject
         {
             return a % b;
         }
+
+        public string AddEurToCalculation(Func<dynamic, dynamic, dynamic> func, int a, int b) => $"{func(a,b)}€";
     }
 }
