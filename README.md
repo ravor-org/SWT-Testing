@@ -12,6 +12,7 @@ Den Rest sollte man hoffentlich in der Historie sehen!
 
 ### Testen Sie Ihr eigenes Projekt / Ihren eigenen Code mit JUnit (so wie wir das mit dem Taschenrechner gemacht haben)
 Tests erfolgten per NUnit und Moq in diesem Repo.
+
 ![image](https://github.com/ravor-org/SWT-Testing/assets/10080228/35edfeb1-4f3f-44b3-9f60-b06100ad2c8b)
 
 
