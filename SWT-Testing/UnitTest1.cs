@@ -59,5 +59,12 @@ namespace SWT_Testing
         {
             Assert.That(() => _testCalculator.RemainingDiv(4, 0), Throws.TypeOf<DivideByZeroException>());
         }
+        
+        // Zuerst der Test dann der Rest!
+        [Test]
+        public void CheckCharToEur()
+        {
+            Assert.That(() => _testCalculator.AddEurToCalculation(_testCalculator.Add, 1, 1), Is.EqualTo("2€"));
+        }
     }
 }
