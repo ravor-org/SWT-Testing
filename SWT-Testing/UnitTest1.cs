@@ -1,3 +1,5 @@
+using System.Buffers;
+using Moq;
 using SWT_TestedProject;
 
 namespace SWT_Testing
@@ -65,6 +67,17 @@ namespace SWT_Testing
         public void CheckCharToEur()
         {
             Assert.That(() => _testCalculator.AddEurToCalculation(_testCalculator.Add, 1, 1), Is.EqualTo("2€"));
+        }
+
+        [Test]
+        public void MockAddTest()
+        {
+            // Create Mocking instance of our calculator, which will - on purpose - fail on 1+1
+            Mock<ICalculator> fakedCalc = new Mock<ICalculator>();
+            // Setup mock to return 3 on 1+1
+            fakedCalc.Setup(x => x.Add(1,1)).Returns(3);
+            // Assert that the mock will work, instead of real function
+            Assert.That(() => fakedCalc.Object.Add(1, 1), Is.EqualTo(3));
         }
     }
 }

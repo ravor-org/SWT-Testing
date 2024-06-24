@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SWT_TestedProject
 {
-    public class Calculator
+    public class Calculator : ICalculator
     {
         public int Add(int a, int b)
         {
